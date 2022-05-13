@@ -8,3 +8,5 @@ La primer versión (la que usa Gdal:translate) tenia un efecto indeseado, genera
 Encontré que existia otro comando que podía utilizar para la misma tarea "QgsRasterFileWriter", el cual realizaba la misma tarea, pero esta vez sin generar los archivos acompañantes indeseados.
 
 De todas maneras, para cuando mandé la segunda version, la primera ya estaba siendo usada y funcionando. Equipo que gana no se toca. La segunda version fue solo una satisfaccion personal por perfeccionar el codigo.
+
+(El instructivo es para los compañeros de equipo que no estan familiarizados con python)
