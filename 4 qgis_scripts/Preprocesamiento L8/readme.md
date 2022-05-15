@@ -2,7 +2,7 @@ Diciembre de 2021. El lanzamiento de la Colección 2 de Landsat había inutiliza
 
 En la Colección 2 de Landsat se modificaba el formato de las imágenes, que cambió de geotiffs a COG (Cloud Optimized Geotiff). Este cambio no debería haber causado ningún problema, pero en nuestro caso, inutilizó el script de preproceso ya que la versión de ENVI que teníamos no reconocía el formato.
 
-Buscando una manera de sortear este inconveniente, descubrimos que si levantábamos las COGs en qgis y usábamos "Guardar como..." para guardarlas como nuevos geotiffs, lográbamos que ENVI las reconozca y así poder seguir usando el script de IDL que teníamos. Esta solución resultaba en agregar un paso manual y repetitivo al procedimiento normal, que sumado al hecho de que la cantidad de imágenes que se procesan periódicamente es considerablemente alta, se transformaba en una carga engorrosa y pesada para el equipo de trabajo, tornándola en inviable.
+Buscando una manera de sortear este inconveniente, descubrimos que si levantábamos las COGs en qgis y usábamos "Guardar como..." para guardarlas como nuevos geotiffs, lográbamos que ENVI las reconozca y así poder seguir usando el script de IDL que teníamos. Esta solución resultaba en agregar un paso manual y repetitivo al procedimiento normal, que sumado al hecho de que la cantidad de imágenes que se procesan periódicamente es considerablemente alta, se transformaba en una carga engorrosa y pesada para el equipo de trabajo, tornándola inviable.
 
 En mi mente resonaba el título de un libro: "automate the boring stuff with Python". Como leí hace poco en un blog, un programador es demasiado vago para hacer una tarea repetitiva durante una semana, pero va a trabajar apasionadamente durante una semana para automatizar esa tarea.
 
