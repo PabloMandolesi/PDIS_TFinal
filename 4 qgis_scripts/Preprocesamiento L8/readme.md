@@ -1,14 +1,17 @@
-En mi trabajo, se usa un script de IDL (ENVI) para hacer un preproceso en las imágenes Landsat 8. En Diciembre de 2021, luego de terminar un curso de posgrado sobre procesamiento digital de imagenes satelitales en python, se lanzo la coleccion 2 de Landsat, la cual modificaba el formato de las imagenes de Geotiffs a COG (Cloud Optimized Geotiff). Este cambio inutilizó el script de ENVI que teniamos.
+Diciembre de 2021. El lanzamiento de la Colección 2 de Landsat había inutilizado el script (IDL) de preprocesamiento de imágenes que se usa en mi trabajo. Hacía solo un par de días, yo acababa de presentar el trabajo final de un curso de posgrado del Instituto Gulich sobre procesamiento digital de imágenes satelitales en Python. Esta fue mi oportunidad para probar lo aprendido en una aplicación real en un ambiente de trabajo. Nunca pensé que me iba a llegar tan rápido.
 
-Descubrimos que si levantabamos las tiffs en qgis y usabamos "Guardar como..." para guardarlas como Geotiffs, podiamos sortear este inconveniente. Esto resultaba en agregar un paso repetitivo y de ejecucion manual al procesamiento. Esta fue mi oportunidad para probar lo aprendido en una aplicación real en un ambiente de trabajo.
+En la Colección 2 de Landsat se modificaba el formato de las imágenes, que cambió de geotiffs a COG (Cloud Optimized Geotiff). Este cambio no debería haber causado ningún problema, pero en nuestro caso, inutilizó el script de preproceso ya que la versión de ENVI que teníamos no reconocía el formato.
 
-Observando el gran numero de archivos con el trabajamos, que de ahora en más deberíamos corregir para poder incorporar a nuestro procesamiento estandar, en mi mente resonaba el titulo de un libro: "automate the boring stuff with Python". Como leí hace poco en un blog, un programador es demasiado vago para hacer una tarea repetitiva durante una semana, pero va a trabajar apasionadamente durante una semana para automatizar esa tarea. 
+Buscando una manera de sortear este inconveniente, descubrimos que si levantábamos las COGs en qgis y usábamos "Guardar como..." para guardarlas como nuevos geotiffs, lográbamos que ENVI las reconozca y así poder seguir usando el script de IDL que teníamos. Esta solución resultaba en agregar un paso manual y repetitivo al procedimiento normal, que sumado al hecho de que la cantidad de imágenes que se procesan periódicamente es considerablemente alta, se transformaba en una carga engorrosa y pesada para el equipo de trabajo, tornándola en inviable.
 
-Y así es como escribí dos versiones del mismo script, el primero usando "Gdal:translate" y el segundo usando "QgsRasterFileWriter". 
-La primer versión (la que usa Gdal:translate) tenia un desvío en su funcionamiento, generaba un archivo ".IMD" acompañando a cada tiff. No era ningun problema, pero no me gustaba el hecho de que el script resultara en algo que no era especificamente lo deseado. Me puse a estudiar la configuración del comando y los drivers de gtiffs de gdal, a ver si se podia modificar algo que corrigiera este efecto indeseado. Fue un callejon sin salida.
+En mi mente resonaba el título de un libro: "automate the boring stuff with Python". Como leí hace poco en un blog, un programador es demasiado vago para hacer una tarea repetitiva durante una semana, pero va a trabajar apasionadamente durante una semana para automatizar esa tarea.
 
-Mientras, encontré que existia otro comando que podía utilizar para la misma tarea "QgsRasterFileWriter", el cual realizaba la misma tarea, pero esta vez sin generar los archivos acompañantes indeseados.
+Y así es como escribí dos versiones del mismo script para automatizar esta tarea. El primero usando "Gdal:translate" y el segundo usando "QgsRasterFileWriter". 
 
-De todas maneras, para cuando mandé la segunda version, la primera ya estaba siendo usada y funcionando. Equipo que gana no se toca. La segunda version fue solo una satisfaccion personal por perfeccionar el codigo.
+La primer versión (la que usa Gdal:translate) tenía un desvío en su funcionamiento, generaba un archivo ".IMD" acompañando a cada tiff. No era ningún problema, pero no me gustaba el hecho de que el script resultara en algo que no era específicamente lo deseado. Me puse a estudiar la configuración del comando y los drivers de gtiffs de gdal, a ver si se podía modificar algo que corrigiera este efecto indeseado. Fue un callejón sin salida.
 
-(El instructivo era para los compañeros de equipo que no estan familiarizados con python)
+Mientras, encontré que existía otro comando que podía utilizar para la misma tarea "QgsRasterFileWriter", el cual realizaba la misma tarea, pero esta vez sin generar los archivos acompañantes indeseados.
+
+De todas maneras, para cuando mandé la segunda versión, la primera ya estaba siendo usada y funcionando. Equipo que gana no se toca. La segunda versión fue solo una satisfacción personal por perfeccionar el código.
+
+(El instructivo era para los compañeros de equipo que no están familiarizados con Python)
