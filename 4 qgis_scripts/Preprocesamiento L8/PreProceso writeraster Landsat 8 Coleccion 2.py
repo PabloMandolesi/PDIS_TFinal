@@ -6,24 +6,6 @@ import shutil
 # levanta las bandas y las guarda en formato Geotiff en "C:\\Preprocesamiento L8\\Descomprimida\\" en carpetas individuales por escena, 
 # para que puedan alimentar el procesador_L8_v3 de ENVI.
 
-#def test02_SaveAsGeoTIFF(self):
-#    """Save raster layer as a GeoTIFF file"""
-#    self._testAvailable() or self.skipTest("Not available")
-#
-#    layer = self._testLayer(self.fileName)
-#    
-#    # write to a disk
-#    # ref. to the InaSAFE plugin
-#    provider = layer.dataProvider()
-#    pipe = QgsRasterPipe()
-#    assert pipe.set(provider.clone()), "cannot set provider to pipe"
-#
-#    outfile = self._testDataPath(self.fileName, output=True)
-#    writer = QgsRasterFileWriter(outfile)
-#    assert not writer.writeRaster(pipe, provider.xSize(), provider.ySize(), provider.extent(), provider.crs()), "failed to write"
-#    assert os.path.exists(outfile), "output file cannot be found"
-#
-
 
 workpath="C:\\Preprocesamiento L8\\Coleccion 2\\"
 listacarpetas=os.listdir(workpath) #Lista de carpetas de escenas descomprimidas de la coleccion2
@@ -49,9 +31,7 @@ for carpeta in listacarpetas: # para cada carpeta:
                         assert not writer.writeRaster(pipe, provider.xSize(), provider.ySize(), provider.extent(), provider.crs()), "failed to write"
                         assert os.path.exists(outfile), "output file cannot be found"
                         
-#                        os.makedirs(f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}', exist_ok=True)
-#                        processing.run("gdal:translate", {'INPUT':f'{path_to_tif}','TARGET_CRS':None,'NODATA':None,'COPY_SUBDATASETS':False,'OPTIONS':'','DATA_TYPE':0,'OUTPUT':f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}\\{file[0:40]}_BQA.TIF'})
-                #        print(f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}\\{file}')
+#                       print(f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}\\{file}')
                         if not rlayer.isValid():
                             print("Layer failed to load!")
                 #        else:
@@ -69,9 +49,7 @@ for carpeta in listacarpetas: # para cada carpeta:
                         assert not writer.writeRaster(pipe, provider.xSize(), provider.ySize(), provider.extent(), provider.crs()), "failed to write"
                         assert os.path.exists(outfile), "output file cannot be found"
                         
-#                        os.makedirs(f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}', exist_ok=True)
-#                        processing.run("gdal:translate", {'INPUT':f'{path_to_tif}','TARGET_CRS':None,'NODATA':None,'COPY_SUBDATASETS':False,'OPTIONS':'','DATA_TYPE':0,'OUTPUT':f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}\\{file}'})
-                #        print(f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}\\{file}')
+#                       print(f'C:\\Preprocesamiento L8\\Descomprimida\\{file[0:40]}\\{file}')
                         if not rlayer.isValid():
                             print("Layer failed to load!")
                 #        else:
