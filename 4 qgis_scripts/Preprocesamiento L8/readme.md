@@ -1,6 +1,6 @@
-Diciembre de 2021. El lanzamiento de la Colección 2 de Landsat había inutilizado el script (IDL) de preprocesamiento de imágenes que se usa en mi trabajo. Hacía solo un par de días, yo acababa de presentar el trabajo final de un curso de posgrado del Instituto Gulich sobre procesamiento digital de imágenes satelitales en Python. Esta fue mi oportunidad para probar lo aprendido en una aplicación real en un ambiente de trabajo. Nunca pensé que me iba a llegar tan rápido.
+Diciembre de 2021. El lanzamiento de la Colección 2 de Landsat había inutilizado el script (IDL) de preprocesamiento de imágenes que se usa en mi trabajo. Hacía solo un par de días, yo acababa de presentar el trabajo final de un curso de posgrado del Instituto Gulich sobre procesamiento digital de imágenes satelitales en Python. Esta fue mi oportunidad para probar lo aprendido en una aplicación real en un ambiente de trabajo. Felicidad porque se presentara tan rápido.
 
-En la Colección 2 de Landsat se modificaba el formato de las imágenes, que cambió de geotiffs a COG (Cloud Optimized Geotiff). Este cambio no debería haber causado ningún problema, pero en nuestro caso, inutilizó el script de preproceso ya que la versión de ENVI que teníamos no reconocía el formato.
+En la Colección 2 de Landsat se modificaba el formato de las imágenes, que cambió de geotiffs a COG (Cloud Optimized Geotiff). Este cambio no debería haber causado ningún problema, pero en nuestro caso, inutilizó el script de preproceso ya que la versión de ENVI que teníamos no reconocía este nuevo formato.
 
 Buscando una manera de sortear este inconveniente, descubrimos que si levantábamos las COGs en qgis y usábamos "Guardar como..." para guardarlas como nuevos geotiffs, lográbamos que ENVI las reconozca y así poder seguir usando el script de IDL que teníamos. Esta solución resultaba en agregar un paso manual y repetitivo al procedimiento normal, que sumado al hecho de que la cantidad de imágenes que se procesan periódicamente es considerablemente alta, se transformaba en una carga engorrosa y pesada para el equipo de trabajo, tornándola inviable.
 
@@ -12,6 +12,4 @@ La primer versión (la que usa Gdal:translate) tenía un desvío en su funcionam
 
 Mientras, encontré que existía otro comando que podía utilizar para la misma tarea "QgsRasterFileWriter", el cual realizaba la misma tarea, pero esta vez sin generar los archivos acompañantes indeseados.
 
-De todas maneras, para cuando mandé la segunda versión, la primera ya estaba siendo usada y funcionando. Equipo que gana no se toca. La segunda versión fue solo una satisfacción personal por perfeccionar el código.
-
-(El instructivo era para los compañeros de equipo que no están familiarizados con Python)
+De todas maneras, para cuando mandé la segunda versión, la primera ya estaba siendo usada y funcionando. Equipo que gana no se toca. La segunda versión fue solo por la satisfacción por perfeccionar el código.
