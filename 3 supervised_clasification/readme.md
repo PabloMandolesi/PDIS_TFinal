@@ -2,4 +2,4 @@ Para el trabajo final del curso de posgrado "Procesamiento digital de imágenes 
 
 Quedé satisfecho al lograr altos grados de exactitud similares a los obtenidos en producción con ENVI en la oficina. Este Path-Row en particular había dado resultados altos de precisión. Voy a buscar uno que no haya dado buenos resultados en producción, para ver si puedo mejorarlos en Python.
 
-Sé que la tarea realizada es mejorable. Tengo pensado incorporar análisis exploratorio de los datos, por ejemplo. Siempre las cosas son perfectibles, pero preferí compartir el proyecto así como está, y actualizarlo en un futuro. Así al menos puedo mostrar un ejemplo práctico de muestra de mi experiencia.
+Sé que la tarea realizada es mejorable. Ante todo debería comentar mejor y mas detalladamente el códigos, tambien tengo pensado incorporar análisis exploratorio de los datos, por ejemplo. Siempre las cosas son perfectibles, pero preferí compartir el proyecto así como está, y actualizarlo en un futuro. Así al menos puedo mostrar un ejemplo práctico de muestra de mi experiencia.
